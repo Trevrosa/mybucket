@@ -3,8 +3,12 @@
     "description": "Creates elegant, staffless lead sheets for musicians needing only chords and lyrics.",
     "homepage": "https://github.com/ChordPro/chordpro",
     "license": "Freeware",
-    "url": "https://github.com/ChordPro/chordpro/releases/download/R6.070/ChordPro-Installer-6-70-7-2-msw-x64.exe",
-    "hash": "eab1083e0a48734dac694d1e0ba26450732a8583354d72ccdd8aa767a2c8bb65",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ChordPro/chordpro/releases/download/R6.070/ChordPro-Installer-6-70-7-2-msw-x64.exe",
+            "hash": "eab1083e0a48734dac694d1e0ba26450732a8583354d72ccdd8aa767a2c8bb65"
+        }
+    },
     "innosetup": true,
     "bin": "chordpro.exe",
     "shortcuts": [
@@ -14,5 +18,12 @@
         ]
     ],
     "notes": "Visual Studio Code ChordPro Extension: https://marketplace.visualstudio.com/items?itemName=ricardomfmsousa.chordpro",
-    "checkver": "github"
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ChordPro/chordpro/releases/download/R$version/ChordPro-Installer-$dashVersion-msw-x64.exe"
+            }
+        }
+    }
 }
