@@ -14,14 +14,5 @@
         ]
     ],
     "notes": "Visual Studio Code ChordPro Extension: https://marketplace.visualstudio.com/items?itemName=ricardomfmsousa.chordpro",
-    "checkver": {
-        "script": [
-            "$assets = (Invoke-RestMethod -Uri 'https://api.github.com/repos/ChordPro/chordpro/releases/latest').assets",
-            "$assets | Where-Object name -like '*.exe' | Select-Object -First 1 name,browser_download_url | ConvertTo-Csv -NoHeader"
-        ],
-        "regex": "\"ChordPro-Installer-(?<version>.+)-msw-x64\\.exe\",\"https://(?<url>.+)\""
-    },
-    "autoupdate": {
-        "url": "https://$matchUrl"
-    }
+    "checkver": "github"
 }
