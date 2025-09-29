@@ -1,0 +1,24 @@
+{
+    "version": "2.2.0-a4",
+    "description": "a tool for working with RP2040/RP2350 binaries, and interacting with RP2040/RP2350 devices when they are in BOOTSEL mode.",
+    "homepage": "https://github.com/raspberrypi/picotool",
+    "license": "BSD-3-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/raspberrypi/pico-sdk-tools/releases/latest/download/picotool-2.2.0-a4-x64-win.zip",
+            "hash": "d6ae945f0110c80f493e21f315de312c89c053f240d78b8fbea3985df97b49f5"
+        }
+    },
+    "bin": "picotool/picotool.exe",
+    "checkver": {
+        "url": "https://api.github.com/repos/raspberrypi/picotool/releases/latest",
+        "jsonpath": "$.tag_name"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/raspberrypi/pico-sdk-tools/releases/latest/download/picotool-$version-x64-win.zip"
+            }
+        }
+    }
+}
