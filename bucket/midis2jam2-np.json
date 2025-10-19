@@ -1,0 +1,36 @@
+{
+    "version": "2.0.3",
+    "description": "midis2jam2 is a remaster of MIDIJam, a 3D MIDI file visualizer. It plays and animates any MIDI file with a 3D virtual band.",
+    "homepage": "https://github.com/wyskoj/midis2jam2",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wyskoj/midis2jam2/releases/download/v2.0.3/midis2jam2_windows-x64_2_0_3.exe",
+            "hash": "00cb69e8b0d42400cd92430ce71ccf71b076ddcb9dd7c6f8f1f5d6eead22448c"
+        }
+    },
+    "shortcuts": [
+        [
+            "midis2jam2.exe",
+            "midis2jam2"
+        ]
+    ],
+    "installer": {
+        "args": [
+            "-q",
+            "-dir $dir"
+        ]
+    },
+    "post_install": [
+        "Remove-Item -Recurse \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\midis2jam2\"",
+        "Remove-Item \"C:\\Users\\Public\\Desktop\\midis2jam2.lnk\""
+    ],
+    "uninstaller": {
+        "file": "uninstall.exe",
+        "args": "-q"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/wyskoj/midis2jam2/releases/download/v$version/midis2jam2_windows-x64_$underscoreVersion.exe"
+    }
+}
